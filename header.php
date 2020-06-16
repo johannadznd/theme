@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
 
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione doloremque esse placeat quibusdam necessitatibus libero nam hic debitis impedit est quidem, voluptatum vel quaerat iure provident dolores soluta quae odit.">
     <?php wp_head(); ?>

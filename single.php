@@ -5,20 +5,16 @@
     <?php  if (have_posts()){ ?>
         <div class="container">
             <?php  while( have_posts()){
-                the_post();  
-                $date =sprintf('<time class="entry-date" datetime="%1$s">%2$s</time>',
-                    esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date())
-                    );?>
-
-                
+                the_post();?>
                 <div class="row">
                     <div class="col-xs-12">
                         <h2><?php the_title(); ?></h2>
-                        <p>Publier le <?php echo $date?>, dans la catégorie <?php the_category(', '); ?></p>
+                        <p>
+                        <?php echo lgmac_give_me_meta(esc_attr( get_the_date( 'c') ), esc_html( get_the_date()), get_the_category_list(', ')); ?>
+                        </p>
                         <?php the_content(); ?>
                     </div>
                 </div>
-
             <?php } ?> 
             
             <div class="row">
@@ -32,8 +28,6 @@
                 </div>
             </div>
             
-        
-      
     <?php }
     else{
         echo 'pas de résultats';
