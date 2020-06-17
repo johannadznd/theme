@@ -4,8 +4,29 @@
 
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione doloremque esse placeat quibusdam necessitatibus libero nam hic debitis impedit est quidem, voluptatum vel quaerat iure provident dolores soluta quae odit.">
-    <?php wp_head(); ?>
+    <?php 
+
+    if (is_home()){?>
+    <meta name="description" content="Le site présente la page des articles du blog"> 
+    <?php } 
+
+    if(is_front_page()){ ?>
+    <meta name="description" content="Le site présente la page d'accueil statique"> 
+    <?php }
+
+    if (is_page() && !is_front_page()){ ?>
+    <meta name="description" content="Le site présente un contenu de type page">
+    <?php } 
+
+    if (is_category()){?>
+    <meta name="description" content="Liste des articles pour la catégorie <?php echo single_cat_title('',false); ?>">  
+    <?php }
+
+    if( is_tag() ){?>
+    <meta name="description" content="Liste des articles reliés à l'étiquette <?php echo single_tag_title('',false); ?>">
+    <?php }
+
+    wp_head(); ?>
 
 </head>
 <body>

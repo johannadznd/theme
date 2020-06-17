@@ -10,7 +10,7 @@
                     <div class="col-xs-12">
                         <h2><?php the_title(); ?></h2>
                         <p>
-                        <?php echo lgmac_give_me_meta(esc_attr( get_the_date( 'c') ), esc_html( get_the_date()), get_the_category_list(', ')); ?>
+                        <?php echo lgmac_give_me_meta(esc_attr( get_the_date( 'c') ), esc_html( get_the_date()), get_the_category_list(', '), get_the_tag_list('',', ')); ?>
                         </p>
                         <?php the_content(); ?>
                     </div>
@@ -27,12 +27,12 @@
                     </nav>
                 </div>
             </div>
-            
+        </div>    
     <?php }
     else{
         echo 'pas de résultats';
     }?>
-        </div>
+        
 </section>   
 
 <?php get_footer(); ?>

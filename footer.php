@@ -1,8 +1,12 @@
-
 <footer>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus aut voluptatibus labore hic?
-    Quos dolores vitae id eaque consectetur maxime suscipit placeat culpa omnis, doloremque in necessitatibus,
-    est cum iusto?</p>
+    <?php 
+        if(is_active_sidebar('widgetized-footer')){
+            dynamic_sidebar('widgetized-footer');
+        }
+        else{
+            echo "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui dolor praesentium aspernatur, obcaecati esse autem officiis assumenda quis. Eos doloremque molestias dolor doloribus ad officiis repellat sint aliquid earum deleniti?";
+        }
+    ?>
 </footer>
 
 <?php wp_footer(); ?>

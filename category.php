@@ -1,18 +1,17 @@
 <?php get_header(); ?>
-<div class="container">
-    <div class="jumbotron">
-        <h1>Hello</h1>
-    </div>
-</div>
 
 <section>
+
+    <div>
+    <p>Archive de la catégorie <?php single_cat_title( "",true); ?></p>
+    </div>
 
     <?php  if (have_posts()){ ?>
         <div class="container">
             <?php  while( have_posts()){
                 the_post(); 
                 get_template_part('content');
-            }?>     
+            } ?>     
         </div>
       
     <?php }
