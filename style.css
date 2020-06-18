@@ -6,3 +6,9 @@ Version: 1.0
 Text Domain: Cleatis 
 */
 
+tr, th {
+
+    border:1px solid black;
+    padding:1vw;
+    text-align: center;
+}

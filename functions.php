@@ -1,5 +1,12 @@
 <?php
 
+function lgmac_session_start(){
+    if( !session_id() ){
+        @session_start();
+    }
+}
+
+add_action('init','lgmac_session_start');
 
 define('LGMAC_VERSION', '1.0.0');
 
@@ -13,6 +20,11 @@ function lgmac_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'lgmac_scripts');
+
+
+include ('build-contact-form.php');
+
+
 
 function lgmac_setup(){
 

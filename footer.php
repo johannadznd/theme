@@ -9,7 +9,12 @@
     ?>
 </footer>
 
-<?php wp_footer(); ?>
+<?php wp_footer(); 
+
+if (isset($_SESSION['contact-result']) && !is_page('contact')){
+    unset($_SESSION['contact-result']);
+}
+?>
 
 </body>
 </html>

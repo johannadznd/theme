@@ -1,5 +1,20 @@
 <?php get_header(); 
 
+if (isset($_SESSION['contact-result'])){?>
+
+    <div class="container">
+         <div class="row">
+            <div class="col">
+                <div class="bg-success text-white text-center p-3 mb-3">
+                    <p class="mb-0"><?php echo $_SESSION['contact-result'];?></p>
+                </div>
+            </div>
+         </div>
+    </div>
+
+<?php }
+
+
 $args_blog = array(
     'post_type' => 'post',
     'posts_per_page' => 120
