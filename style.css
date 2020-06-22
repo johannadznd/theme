@@ -1,14 +1,89 @@
 /*
-Theme Name: Cleatis
+Theme Name: Cléatis
 Author: Johanna Dézarnaud
-Description: Test de thème
+Description: Thème Wordpress Cléatis
 Version: 1.0
 Text Domain: Cleatis 
 */
 
-tr, th {
-
-    border:1px solid black;
-    padding:1vw;
+h1, h2 {
     text-align: center;
+    padding: 3vw;
+}
+
+article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5vw 5vw 5vw 0;
+
+}
+
+p img {
+    margin: 0 5vw 0 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+p{
+    max-width: 55vw; 
+}
+
+#sec_art{
+   margin : 2vw;
+}
+
+.art{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2vw;
+}
+
+#contenue{
+    margin-left: 2vw;
+    flex-direction: column;
+}
+
+footer{
+    background: #B3B6B7 ;
+    height: 15vw;
+}
+
+#pagination{
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 2vw;
+}
+
+#pagination a, span {
+    padding-left: 1vw;
+}
+
+
+@media screen and (max-width:920px){
+
+    article{
+        
+        justify-content: center;
+        margin: 1vw;
+    
+    }
+
+    p{
+        max-width: 80vw; 
+    }
+
+    .art{
+        justify-content: center;
+
+    }
+    h3{
+        text-align: center;
+    }
+
+    footer{
+        height: 15vw;
+    }
+    
 }

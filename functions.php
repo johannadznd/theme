@@ -39,7 +39,7 @@ function lgmac_setup(){
 add_action('after_setup_theme','lgmac_setup');
 
 
-function lgmac_give_me_meta($date1, $date2, $cat,$tags){
+function lgmac_give_me_meta($date1, $date2, $cat){
     
     $chaine  = 'publié le <time class="entry-date" datetime="';
     $chaine .= $date1;
@@ -47,18 +47,11 @@ function lgmac_give_me_meta($date1, $date2, $cat,$tags){
     $chaine .= $date2;
     $chaine .= '</time> dans la catégorie ';
     $chaine .= $cat; 
-    if (strlen($tags) > 0 ){
-         $chaine .= ' avec les étiquettes: '.$tags;
-    }
+
     return $chaine;
 }
 
 
-function new_excerpt_more( $more ) {
-    return ' <a class="more-link" href="' .get_permalink()  .'">' . 'Lire la suite' . '</a>';
-}
-
-add_filter('excerpt_more', 'new_excerpt_more');
 
 function lgmac_widgets_init(){
     register_sidebar(array(
@@ -124,3 +117,4 @@ function fn_delete_message() {
 
 	die();
 }
+

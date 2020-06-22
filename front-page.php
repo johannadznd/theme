@@ -1,5 +1,6 @@
-<?php get_header(); 
+<?php get_header(); ?>
 
+<?php
 if (isset($_SESSION['contact-result'])){?>
 
     <div class="container">
@@ -12,59 +13,63 @@ if (isset($_SESSION['contact-result'])){?>
          </div>
     </div>
 
-<?php }
-
-
-$args_blog = array(
-    'post_type' => 'post',
-    'posts_per_page' => 120
-);
-
-$req_blog = new WP_Query($args_blog);
-
-?>
-<section>
-
-    <?php  if ($req_blog->have_posts()){ ?>
-        <div class="container">
-            <?php  while($req_blog->have_posts()){
-                $req_blog->the_post();?>
-                <h2><?php the_title()?></h2>
-                <?php
-                the_post_thumbnail( 'medium',array( 'class' => 'img-responsive aligncenter'));
-                the_excerpt();
-                echo lgmac_give_me_meta(
-                    esc_attr( get_the_date( 'c' ) ),
-                    esc_html( get_the_date()),
-                    get_the_category_list( ', '),
-                    get_the_tag_list('',', ')
-                );
-            } ?>     
-        </div>
-      
-    <?php }
-    else{
-        echo 'pas de résultats';
-    }  
-    ?>  
-</section>   
+<?php } ?> 
+<!-- Affiche message pour formulaire envoyé -->
 
 <section>
-    <div class="container">
         <?php if(have_posts()){
             while(have_posts()){
-                the_post(); ?>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <?php 
-                            the_title('<h1 class=>','</h1>');
-                            the_content();
-                        ?>
+                the_post(); 
+                        
+                        the_title('<h1 class=>','</h1>');?>
+                    <div>
+                         <article>
+                            <?php the_content(); ?>  
+                        </article>
                     </div>
-                </div>
+                       
+                        
             <?php }
         } ?>
-    </div>
 </section>
+<!-- Affiche le contenue de la page accueil -->
+
+
+<h2>Nos articles</h2>
+
+<?php 
+
+
+
+wp_reset_query();
+if(is_front_page()) $paged=(get_query_var('paged'))?get_query_var('paged'):(get_query_var('page'))?get_query_var('page'):1;
+else $paged=(get_query_var('paged'))?get_query_var('paged'):1;
+query_posts(array('showposts'=>get_option('posts_per_page'),'paged'=>$paged));
+
+?>
+<section id="sec_art">
+
+    <?php  if (have_posts()){ ?>
+            <?php  while(have_posts()){
+                the_post();
+                ?><div class="art">
+                <?php the_post_thumbnail( 'medium',array( 'class' => 'img-responsive aligncenter'));?>
+                  <div id="contenue">
+                       <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a></h3>
+                        <?php the_excerpt(); ?>
+                  </div>
+                </div>  
+           <?php }     
+                
+       
+    }
+  
+
+?>
+
+</section>   
+<!-- Affiche 120 articles -->
+
+
 
 <?php get_footer(); ?>
