@@ -42,7 +42,7 @@ if (isset($_SESSION['contact-result'])){?>
 
 
 wp_reset_query();
-if(is_front_page()) $paged=(get_query_var('paged'))?get_query_var('paged'):(get_query_var('page'))?get_query_var('page'):1;
+if(is_front_page())$paged=(get_query_var('paged'))?get_query_var('paged'):(get_query_var('page'))?get_query_var('page'):1;
 else $paged=(get_query_var('paged'))?get_query_var('paged'):1;
 query_posts(array('showposts'=>get_option('posts_per_page'),'paged'=>$paged));
 
@@ -70,6 +70,26 @@ query_posts(array('showposts'=>get_option('posts_per_page'),'paged'=>$paged));
 </section>   
 <!-- Affiche 120 articles -->
 
+<?php 
+        
+    global $wp_query;
+    $big = 999999999;
+    $total_pages = $wp_query->max_num_pages;
 
+    if ($total_pages > 1){?>
+        <div id="pagination">
+            <?php 
+                echo paginate_links(array(
+                'base'      => str_replace($big,'%#%', esc_url( get_pagenum_link ( $big )) ),
+                'format'    => '/page/%#%',
+                'current'   => max(1, get_query_var('paged')),
+                'total'     => $total_pages,
+                'prev_next' => true,
+                'prev_text' => '« Page précédente',
+                'next_text' => 'Page suivante »'
+                )); 
+            ?>
+        </div>
+<?php } ?>
 
 <?php get_footer(); ?>

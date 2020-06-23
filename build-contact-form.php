@@ -1,6 +1,6 @@
 <?php 
 
-function lgmac_create_table_contact()  {
+function jd_create_table_contact()  {
 	global $wpdb;
 	$tablename = $wpdb->prefix . "contacts";	
 
@@ -22,20 +22,20 @@ function lgmac_create_table_contact()  {
 
 		dbDelta($sql);
 
-}  // fin  lgmac_create_table_contact
+}  // fin  jd_create_table_contact
 
-add_action( "after_switch_theme", "lgmac_create_table_contact" );
+add_action( "after_switch_theme", "jd_create_table_contact" );
 
 
 
 //=========================================================================
 //==============   Page des messages contact
 //=========================================================================
-function lgmac_contact_create_menu() {
-	add_menu_page( 'messages', 'Messages', 'edit_pages', 'messages_recus' , 'lgmac_create_page_contact', 'dashicons-email-alt', 6);
-}  //fin fn lgmac_contact_create_menu
+function jd_contact_create_menu() {
+	add_menu_page( 'messages', 'Messages', 'edit_pages', 'messages_recus' , 'jd_create_page_contact', 'dashicons-email-alt', 6);
+}  //fin fn jd_contact_create_menu
 
-function lgmac_create_page_contact() {
+function jd_create_page_contact() {
 
 	global $wpdb;
 	$tablename = $wpdb->prefix . "contacts";	
@@ -106,8 +106,8 @@ h1{
 
 
 <?php
-}  // fin fn lgmac_create_page_contact
+}  // fin fn jd_create_page_contact
 
 
-add_action( 'admin_menu', 'lgmac_contact_create_menu');
+add_action( 'admin_menu', 'jd_contact_create_menu');
 

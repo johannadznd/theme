@@ -1,18 +1,14 @@
 <?php get_header(); ?>
-<div class="container">
-    <div class="jumbotron">
-        <h1>Hello</h1>
-    </div>
-</div>
 
-<section>
+<h2><?php the_title(); ?></h2>
 
+<section id="index" class="left">
     <?php  if (have_posts()){ ?>
         <div class="container">
             <?php  while( have_posts()){
                 the_post(); 
-                get_template_part('content');
-            }?>     
+                the_content();
+}?>     
         </div>
       
     <?php }
@@ -21,6 +17,6 @@
     }?>
 
 </section>   
-
+<?php get_template_part('sidebar'); ?>
 <?php get_footer(); ?>
 

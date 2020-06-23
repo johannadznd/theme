@@ -1,33 +1,33 @@
 <?php
 
-function lgmac_session_start(){
+function jd_session_start(){
     if( !session_id() ){
         @session_start();
     }
 }
 
-add_action('init','lgmac_session_start');
+add_action('init','jd_session_start');
 
-define('LGMAC_VERSION', '1.0.0');
+define('JD_VERSION', '1.0.0');
 
-function lgmac_scripts() {
+function jd_scripts() {
     wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
     wp_enqueue_script('jquery');
     wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array('jquery'), 1, true);
     wp_enqueue_script('boostrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery', 'popper'), 1, true);
-    wp_enqueue_style( 'lgmac_custom', get_template_directory_uri() . '/style.css', array('bootstrap'), LGMAC_VERSION , 'all' );
-    wp_enqueue_script( 'lgmac_script', get_template_directory_uri() . '/js/Cleatis.js', array('jquery'), LGMAC_VERSION , true );
-    wp_localize_script( 'lgmac_ajax_script', 'ajaxVars', array('url' => admin_url('/admin-ajax.php')));
+    wp_enqueue_style( 'jd_custom', get_template_directory_uri() . '/style.css', array('bootstrap'), JD_VERSION , 'all' );
+    wp_enqueue_script( 'jd_script', get_template_directory_uri() . '/js/Cleatis.js', array('jquery'), JD_VERSION , true );
+    wp_localize_script( 'jd_ajax_script', 'ajaxVars', array('url' => admin_url('/admin-ajax.php')));
 }
 
-add_action('wp_enqueue_scripts', 'lgmac_scripts');
+add_action('wp_enqueue_scripts', 'jd_scripts');
 
 
 include ('build-contact-form.php');
 
 
 
-function lgmac_setup(){
+function jd_setup(){
 
     add_theme_support( 'post-thumbnails' );
 
@@ -36,12 +36,12 @@ function lgmac_setup(){
     register_nav_menus( array('primary' => 'principal'));
 }
 
-add_action('after_setup_theme','lgmac_setup');
+add_action('after_setup_theme','jd_setup');
 
 
-function lgmac_give_me_meta($date1, $date2, $cat){
+function jd_give_me_meta($date1, $date2, $cat){
     
-    $chaine  = 'publié le <time class="entry-date" datetime="';
+    $chaine  = 'Publié le <time class="entry-date" datetime="';
     $chaine .= $date1;
     $chaine .= '">';
     $chaine .= $date2;
@@ -53,7 +53,7 @@ function lgmac_give_me_meta($date1, $date2, $cat){
 
 
 
-function lgmac_widgets_init(){
+function jd_widgets_init(){
     register_sidebar(array(
         'name'          => 'Footer Widget Zone',
         'descritpion'   => 'Widgets affichés dans le footer: 4 au maximum',
@@ -65,7 +65,24 @@ function lgmac_widgets_init(){
     ));
 }
 
-add_action('widgets_init','lgmac_widgets_init');
+add_action('widgets_init','jd_widgets_init');
+
+
+function jd_widgets_sidebar(){
+    register_sidebar(
+        array(
+            'name'          => 'Sidebar',
+            'id'            => 'sidebar',
+            'description'   => 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'twentyseventeen',
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+}
+
+add_action('widgets_init','jd_widgets_sidebar');
 
 
 function my_image_sizes($sizes) {
@@ -81,23 +98,23 @@ function my_image_sizes($sizes) {
 add_filter('image_size_names_choose', 'my_image_sizes');
 
 
-function lgmac_admin_init() {
+function jd_admin_init() {
 
-    function lgmac_admin_scripts(){
+    function jd_admin_scripts(){
         if (!isset($_GET['page']) || $_GET['page'] == "messages_reçus" ){
             return;
         }
     
        wp_enqueue_media();
-       wp_enqueue_script( 'lgmac-admin-init', get_template_directory_uri() . '/js/admin-message.js', array(), LGMAC_VERSION, true );	
+       wp_enqueue_script( 'jd-admin-init', get_template_directory_uri() . '/js/admin-message.js', array(), JD_VERSION, true );	
       
     }
    
-    add_action('admin_enqueue_scripts', 'lgmac_admin_scripts' );
+    add_action('admin_enqueue_scripts', 'jd_admin_scripts' );
 
-}  // fin lgmac_admin_init
+}  // fin jd_admin_init
 
-add_action('admin_init', 'lgmac_admin_init');
+add_action('admin_init', 'jd_admin_init');
 add_action('wp_ajax_delete_message', 'fn_delete_message');
 
 

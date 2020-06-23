@@ -68,24 +68,15 @@ if(isset($_POST['send'])){
             wp_redirect(home_url());
         } 
     }
-
-    //echo'<pre>';
-    //var_dump($_POST);
-    //echo'</pre>';
-
-
-
-
 }
 
 get_header();
 ?>
-
+<h2>Nous contacter</h2>
 <div class="container">
 
     <div class="row">
         <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
-            <h1>Nous contacter:</h1>
             <form id="lg-contact" action="<?php the_permalink(); ?>" method="post">
               <p>Utilisez ce formulaire pour nous contacter</p>
 
@@ -146,18 +137,8 @@ get_header();
             </form>
         </div>
 
-        <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
-            <?php 
-                if ( have_posts())
-                {
-                    while( have_posts(  ))
-                    {
-                        the_post(  );
-                        the_content();
-                    }
-                }  
-            ?>
-        </div>
+        <?php get_template_part('sidebar'); ?>
+
     </div>
 </div><!----container--->
 
