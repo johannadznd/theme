@@ -3,7 +3,15 @@
 <h2>Archive de la catégorie <?php single_cat_title( "",true); ?></h2>
 
 <section id="sec_art" class="left">
+<?php
 
+if ( function_exists('yoast_breadcrumb') ) {
+yoast_breadcrumb('
+<p id="breadcrumbs">','</p>
+');
+}
+
+?>
     <?php  if (have_posts()){ ?>
         <div id='description' ><?php the_archive_description();?></div> 
             <?php  while( have_posts()){

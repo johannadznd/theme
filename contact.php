@@ -73,14 +73,15 @@ if(isset($_POST['send'])){
 get_header();
 ?>
 <h2>Nous contacter</h2>
-<div class="container">
+<section  id="sec_art" class="left">
+<?php if ( function_exists('yoast_breadcrumb') ) {
+    yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+    }
+?>
+    <form id="lg-contact" action="<?php the_permalink(); ?>" method="post">
+        <p>Utilisez ce formulaire pour nous contacter</p>
 
-    <div class="row">
-        <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
-            <form id="lg-contact" action="<?php the_permalink(); ?>" method="post">
-              <p>Utilisez ce formulaire pour nous contacter</p>
-
-                <div class="form-group">
+        <div class="form-group">
                     <label for="ctc-nom">Nom</label>
                     <?php if (isset($message['nom'])){ ?>
                         <div class="text-white bg-danger px-3"><?php echo $message['nom']; ?></div>
@@ -128,20 +129,13 @@ get_header();
 
                     <input type="text" id="captcha" name="captcha" /><small class="text-danger"><b> * Requis</b></small>
                 </div>
-
-
-
                 <div class="form-group">
-                    <input type="submit" class="btn btn-default" id="send" name="send" value="Envoyer">
+                    <input style=" border:solid 1px" type="submit" class="btn btn-default" id="send" name="send" value="Envoyer">
                 </div>
             </form>
         </div>
-
-        <?php get_template_part('sidebar'); ?>
-
-    </div>
-</div><!----container--->
-
-
+       
+</section>
+ <?php get_template_part('sidebar'); ?>
 <?php
 get_footer();

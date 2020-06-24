@@ -1,3 +1,5 @@
+//Fonction messages
+
 jQuery(document).ready(function($){
 
     if(document.getElementById('table-messages')) {
@@ -21,22 +23,15 @@ jQuery(document).ready(function($){
             stringConfirm     += "<a id='my-cancel'  href='#'>Annuler</a></p>";
             $td.wrapInner(stringConfirm);
     
-          } // fin du if clickable == true
-    
-    
-        });  // fin écouteur evt click
-    
+          }
+        });
     
         $("#table-messages").on('click', '#my-cancel', function(e) {  
           e.preventDefault(); 
           $td.find("#confirm-delete").remove().end().html(contentBefore);
           clickable = true;
-        });  // fin du on(click  #my-cancel)
-    
-    
-    
-    
-    
+        });
+
         $("#table-messages").on('click', '#my-confirm', function(e) {  
           e.preventDefault();
     
@@ -57,17 +52,6 @@ jQuery(document).ready(function($){
               }
             }
           );
-    
-    
-        });  // fin du on(click  #my-confirm)
-    
-    
-    
-    
-    
-      }  // fin du document.getElementById('table-messages')
-    
-    
-    
-    
-    });  // fin du ready jQuery
+        }); 
+      }  
+    });  

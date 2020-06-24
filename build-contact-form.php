@@ -1,5 +1,7 @@
 <?php 
 
+//Création d'une tale contact
+
 function jd_create_table_contact()  {
 	global $wpdb;
 	$tablename = $wpdb->prefix . "contacts";	
@@ -22,19 +24,18 @@ function jd_create_table_contact()  {
 
 		dbDelta($sql);
 
-}  // fin  jd_create_table_contact
+}
 
 add_action( "after_switch_theme", "jd_create_table_contact" );
 
 
 
-//=========================================================================
-//==============   Page des messages contact
-//=========================================================================
+//Création du menu message
 function jd_contact_create_menu() {
 	add_menu_page( 'messages', 'Messages', 'edit_pages', 'messages_recus' , 'jd_create_page_contact', 'dashicons-email-alt', 6);
-}  //fin fn jd_contact_create_menu
+}  
 
+//Recherche dans la base de donnée
 function jd_create_page_contact() {
 
 	global $wpdb;
@@ -44,6 +45,8 @@ function jd_create_page_contact() {
 			FROM `$tablename`
 			ORDER BY `created_at` DESC";
 	$result = $wpdb->get_results( $sql, OBJECT);   ?>
+
+
 
 <style>
 table {
@@ -68,45 +71,37 @@ h1{
 }
 </style> 
 
-	<div class="container" style="margin-top:40px;">
-		<div class="row">
-			<div class="col-xs-12">
-				<h1>Liste des messages reçus</h1>
-				<table id="table-messages" class="table table-bordered">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Date</th>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-							<th>Email</th>
-							<th>Message</th>
-							<th>&nbsp;</th>
-						</tr>
-					</thead>
+	<h1>Liste des messages reçus</h1>
+		<table id="table-messages" class="table table-bordered">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Date</th>
+                    <th>Nom</th>
+                	<th>Prénom</th>
+					<th>Email</th>
+					<th>Message</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
 
-					<tbody>
-						<?php foreach ($result as $res):
-							echo '<tr>';
-							echo '<td>', $res->ctc_id, '</td>';
-							echo '<td>', $res->date_formatted, '</td>';
-                            echo '<td>', $res->ctc_nom, '</td>';
-                            echo '<td>', $res->ctc_prenom, '</td>';
-							echo '<td>', $res->ctc_mail, '</td>';
-							echo '<td>', stripslashes($res->ctc_message), '</td>';
-							echo '<td><a class="deletable button" data-id="',$res->ctc_id,'">X</a></td>';
-							echo '</tr>';
-						endforeach; ?>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div><!-- /container -->
-
-
-
+			<tbody>
+				<?php foreach ($result as $res){
+					echo '<tr>';
+					echo '<td>', $res->ctc_id, '</td>';
+					echo '<td>', $res->date_formatted, '</td>';
+                    echo '<td>', $res->ctc_nom, '</td>';
+                    echo '<td>', $res->ctc_prenom, '</td>';
+					echo '<td>', $res->ctc_mail, '</td>';
+					echo '<td>', stripslashes($res->ctc_message), '</td>';
+					echo '<td><a class="deletable button" data-id="',$res->ctc_id,'">X</a></td>';
+					echo '</tr>';
+				} ?>
+			</tbody>
+		</table>
+	
 <?php
-}  // fin fn jd_create_page_contact
+}  
 
 
 add_action( 'admin_menu', 'jd_contact_create_menu');
