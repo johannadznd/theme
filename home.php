@@ -4,12 +4,12 @@
 
 
 <section id="sec_art" class="left">
+
+<div id="breadcrumbs"><?php get_breadcrumb(); ?></div>
+
 <?php
-if ( function_exists('yoast_breadcrumb') ) {
-yoast_breadcrumb('
-<p id="breadcrumbs">','</p>
-');
-}
+
+
 ?>
     <?php  
         if (have_posts()){ ?>

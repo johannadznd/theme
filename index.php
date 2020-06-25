@@ -4,13 +4,8 @@
 
 
 <section id="index" class="left">
-<?php
-if ( function_exists('yoast_breadcrumb') ) {
-yoast_breadcrumb('
-<p id="breadcrumbs">','</p>
-');
-}
-?>
+<div id="breadcrumbs"><?php get_breadcrumb(); ?></div>
+
     <?php  if (have_posts()){ ?>
         <div class="container">
             <?php  while( have_posts()){

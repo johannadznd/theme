@@ -6,7 +6,31 @@ Version: 1.0
 Text Domain: Cleatis 
 */
 
+#home{
+    background: #273746;
+    padding: 2vw 0 2vw 0;
+    border-radius: 0 0 35vw 0;
+    color: white;
+}
 
+
+#navbar{
+    background:none;
+    border-bottom: solid 2px;
+}
+
+#navbar a {
+    padding: 1vw;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: black;
+}
+
+.navbar-light .navbar-toggler {
+    color: black;
+    border-color: black;
+
+}
 h1, h2 {
     text-align: center;
     margin-top: 2vw;
@@ -62,12 +86,13 @@ p{
 
 
 footer{
-    background:#5D6D7E;
+    background:#273746;
     height: 35%;
     bottom:0;
     width:100%;
     display: flow-root;
     margin-top: 5vw;
+    color: white;
 }
 
 #pagination{
@@ -137,23 +162,39 @@ form{
 
 footer nav{
     display: flex;
-    flex-direction: column;
     padding: 2vw;
+    justify-content: space-between;
 }
 
-footer nav a {
+footer a {
     padding: 1vw;
-    text-decoration: none;
     color: white;
+    text-decoration: overline;
 }
 
 footer a:hover {
-    text-decoration: none;
+    text-decoration: underline;
+    padding: 1vw;
     color:#D0D3D4;
 }
 
+#desc{
+    
+    margin: 2vw;
+    text-align: center;
+    font-size: 18px;
+}
+
+#desc p{
+    max-width: none;
+    width: unset;
+}
 
 @media screen and (max-width:980px){
+
+    #home{
+        border-radius: unset;
+    }
 
     #pagination1{
         margin:0;    

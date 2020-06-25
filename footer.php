@@ -1,31 +1,42 @@
+
+<footer>
+
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "Organization",
-    "name": "Alsacreations",
+    "name": "Cléatis",
     "contactPoint": {
         "@type": "ContactPoint",
-        "url": "https://alsacreations.com",
-        "email": "contact@alsacreations.com",
-        "contactType": "technical support",
-        "contactOption": "TollFree"
+        "url": "https://www.cleatis.fr/",
+        "email": "contact@cleatis.fr"
     }
 }
 </script>
 
-<footer>
     <?php 
+   
         if(is_active_sidebar('widgetized-footer')){
             dynamic_sidebar('widgetized-footer');
         }
         else{ ?>
 
-        <nav>
-           <a href="http://localhost/wordpress/cgu/">CGU</a>
-           <a href="http://localhost/wordpress/mentions-legales/">Mentions légales</a>
-           <a href="http://localhost/wordpress/plan-html/">Plan HTML</a>
-           <a href="http://localhost/wordpress/sitemap_index.xml">Index.XML</a>
-        </nav>
+            
+            <div id="desc">
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam sed, itaque voluptatum quod provident quos. Qui sunt dolor voluptatum, et ducimus repellendus quae recusandae magni expedita esse vitae rem ullam. </p>
+                <a href="#">test</a>
+            </div>
+
+            <div>
+                <nav>
+                    <a href="http://localhost/wordpress/cgu/">CGU</a>
+                    <a href="http://localhost/wordpress/mentions-legales/">Mentions légales</a>
+                    <a href="http://localhost/wordpress/plan-html/">Plan HTML</a>
+                    <a href="http://localhost/wordpress/sitemap_index.xml">Index.XML</a>
+                </nav>
+            </div>
+            
+        
           
           <?php  }
     ?>

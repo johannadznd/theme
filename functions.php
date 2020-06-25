@@ -135,3 +135,41 @@ function fn_delete_message() {
 	die();
 }
 
+function get_breadcrumb() {
+
+    ?>
+    <span>
+
+    <?php 
+    echo '<a href="'.home_url().'">Accueil</a>';
+    if (is_single()) {
+        echo " > ";
+        the_category(' &bull; ');
+            if (is_single()) {
+                echo " > ";
+                the_title();
+            }
+        }
+    if (is_category()) {
+            $thisCat = get_category(get_query_var('cat'), false);
+            if ($thisCat->parent != 0) {
+                echo get_category_parents($thisCat->parent, true);
+            }
+            echo ' > ';
+            echo 'Catégorie : ' . single_cat_title('', false);
+    }
+    elseif (is_page()) {
+        echo " > ";
+        echo the_title();
+    
+    } 
+    elseif (is_home()) {
+        echo " > ";
+        echo 'Blog';
+    
+    } 
+    ?>    
+    </span>
+   
+    <?php
+}

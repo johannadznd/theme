@@ -74,10 +74,10 @@ get_header();
 ?>
 <h2>Nous contacter</h2>
 <section  id="sec_art" class="left">
-<?php if ( function_exists('yoast_breadcrumb') ) {
-    yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-    }
-?>
+
+<div id="breadcrumbs"><?php get_breadcrumb(); ?></div>
+
+
     <form id="lg-contact" action="<?php the_permalink(); ?>" method="post">
         <p>Utilisez ce formulaire pour nous contacter</p>
 

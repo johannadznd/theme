@@ -2,14 +2,9 @@
 <h2><?php the_title(); ?></h2>
 
 <section class="left">
-<?php
-if ( function_exists('yoast_breadcrumb') ) {
-yoast_breadcrumb('
-<p id="breadcrumbs">','</p>
-');
-}
 
-?>
+<div id="breadcrumbs"><?php get_breadcrumb(); ?></div>
+
     <?php  if (have_posts()){ ?>
         <?php  while( have_posts()){
             the_post();?>
