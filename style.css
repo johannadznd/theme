@@ -67,6 +67,22 @@ p{
     margin: 2vw;
 }
 
+.accueil .art:hover{
+    padding: 2vw;
+    border: solid 3px;
+    border-radius: 2vw;
+}
+
+.accueil .art a{
+    text-decoration: overline;
+    color: black;
+}
+
+.accueil .art a:hover{
+    text-decoration: underline;
+    color: #273746 ;
+}
+
 
 #contenue{
     margin-left: 2vw;

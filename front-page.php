@@ -47,7 +47,7 @@ else $paged=(get_query_var('paged'))?get_query_var('paged'):1;
 query_posts(array('showposts'=>get_option('posts_per_page'),'paged'=>$paged));
 
 ?>
-<section id="sec_art">
+<section id="sec_art" class="accueil">
 
     <?php  if (have_posts()){ ?>
             <?php  while(have_posts()){
