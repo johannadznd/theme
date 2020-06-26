@@ -76,6 +76,11 @@ p{
 .accueil .art a{
     text-decoration: overline;
     color: black;
+    padding-top: 1vw;
+}
+
+.accueil .art img{
+    margin-bottom: 1vw;
 }
 
 .accueil .art a:hover{
