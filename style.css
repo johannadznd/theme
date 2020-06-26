@@ -67,10 +67,17 @@ p{
     margin: 2vw;
 }
 
+.art:hover{
+    border: solid;
+    text-align: center;
+    justify-content: center;
+    border-radius: 2vw;
+}
+
 .accueil .art:hover{
     padding: 2vw;
     border: solid 3px;
-    border-radius: 2vw;
+    
 }
 
 .accueil .art a{
@@ -79,7 +86,7 @@ p{
     padding-top: 1vw;
 }
 
-.accueil .art img{
+.art img{
     margin-bottom: 1vw;
 }
 
@@ -112,7 +119,6 @@ footer{
     bottom:0;
     width:100%;
     display: flow-root;
-    margin-top: 5vw;
     color: white;
 }
 
@@ -134,11 +140,10 @@ footer{
 .aside{
     padding: 1vw; 
     width: 30%;
-    margin: -4vw 2vw 0 60vw;
     float:right !important;
     border: solid black 2px ;
     position: sticky;
-    bottom:10vw;
+    top:5vw;
 }
 
 .left{
@@ -163,6 +168,7 @@ footer{
 .pager{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 3vw;
 }
 
 #breadcrumbs{
@@ -172,9 +178,22 @@ footer{
 }
 
 #breadcrumbs span{
-    background-color: #E5E7E9;
+    background-color: #273746;
     padding: 1vw;
+    color: white;
+    border-radius: 0vw 2vw 0;
 
+}
+
+
+#breadcrumbs a{
+    color:white;
+    text-decoration: overline;
+}
+
+#breadcrumbs a:hover{
+    color:#D0D3D4;
+    text-decoration: underline;
 }
 
 form{
@@ -209,6 +228,29 @@ footer a:hover {
 #desc p{
     max-width: none;
     width: unset;
+}
+
+.navbar-brand{
+    margin-right:unset;
+}
+
+.description{
+    margin: 3px 2vw 0 0;
+}
+
+.text-center{
+    margin: 3vw;
+}
+
+ul{
+    list-style: none;
+ 
+}
+
+#desc ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
 }
 
 @media screen and (max-width:980px){
@@ -321,6 +363,12 @@ footer a:hover {
         width: 90vw;
     }
 
-    
+    .art:hover{
+    border:none;
+    }
 
 }
+
+    .dropdown:hover .dropdown-menu {
+          display: block;
+    }

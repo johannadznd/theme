@@ -58,10 +58,10 @@ function jd_widgets_init(){
         'name'          => 'Footer Widget Zone',
         'descritpion'   => 'Widgets affichés dans le footer: 4 au maximum',
         'id'            => 'widgetized-footer',
-        'before_widget' => '<div id="%1$s class="col-xs-3 %2$s"><div class="inside-widget">',
+        'before_widget' => '<div id="desc">',
         'after_widget'  => '</div></div>',
-        'before_title'  => '<h2 class="h3 text-center">',
-        'after_title'   => '</h2>',
+        'before_title'  => '<h4 class="text-center">',
+        'after_title'   => '</h4>',
     ));
 }
 

@@ -185,8 +185,8 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
 			// If the item has children, add atts to the <a>.
 			if ( isset( $args->has_children ) && $args->has_children && 0 === $depth && $args->depth > 1 ) {
-				$atts['href']          = '#';
-				$atts['data-toggle']   = 'dropdown';
+				$atts['href']          = ! empty( $item->url ) ? $item->url : '';;
+				$atts['data-hover']   = 'dropdown';
 				$atts['aria-haspopup'] = 'true';
 				$atts['aria-expanded'] = 'false';
 				$atts['class']         = 'dropdown-toggle nav-link';
@@ -482,7 +482,8 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 						// Check for special class types we need additional handling for.
 						if ( 'disabled' === $link_class ) {
 							// Convert link to '#' and unset open targets.
-							$atts['href'] = '#';
+							$atts['href'] = ! empty( $item->url ) ? $item->url : '';
+
 							unset( $atts['target'] );
 						} elseif ( 'dropdown-header' === $link_class || 'dropdown-divider' === $link_class || 'dropdown-item-text' === $link_class ) {
 							// Store a type flag and unset href and target.
