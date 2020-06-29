@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+
 <h2>Archive de la catégorie <?php single_cat_title( "",true); ?></h2>
 
 <section id="sec_art" class="left">
@@ -7,11 +8,15 @@
 
 
     <?php  if (have_posts()){ ?>
-        <div id='description' ><?php the_archive_description();?></div> 
+       <div  id='description' ><?php the_archive_description();?></div>
+        </div>
+        
             <?php  while( have_posts()){
                 the_post(); 
                 get_template_part('content');
-            } ?>     
+            } ?>    
+        
+       
       
     <?php }
     else{

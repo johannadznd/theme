@@ -86,7 +86,7 @@ get_header();
                     <?php if (isset($message['nom'])){ ?>
                         <div class="text-white bg-danger px-3"><?php echo $message['nom']; ?></div>
                     <?php } ?>
-                     <input type="text" class="form-control" id="ctc-nom" name="ctc-nom" size="50" placeholder="Votre Nom..." value="<?php echo(isset($_POST['ctc-nom'])) ? esc_attr($_POST['ctc-nom']) : '' ; ?>">
+                     <input type="text" id="ctc-nom" name="ctc-nom" size="50" placeholder="Votre Nom..." value="<?php echo(isset($_POST['ctc-nom'])) ? esc_attr($_POST['ctc-nom']) : '' ; ?>">
                      <small class="text-danger"><b>* Requis</b></small>
                 </div>
 
@@ -95,7 +95,7 @@ get_header();
                     <?php if (isset($message['prenom'])){ ?>
                         <div class="text-white bg-danger px-3"><?php echo $message['prenom']; ?></div>
                     <?php } ?>
-                     <input type="text" class="form-control" id="ctc-prenom" name="ctc-prenom" size="50" placeholder="Votre prenom..." value="<?php echo(isset($_POST['ctc-prenom'])) ? esc_attr($_POST['ctc-prenom']) : '' ; ?>">
+                     <input type="text" id="ctc-prenom" name="ctc-prenom" size="50" placeholder="Votre prenom..." value="<?php echo(isset($_POST['ctc-prenom'])) ? esc_attr($_POST['ctc-prenom']) : '' ; ?>">
                      <small class="text-danger"><b>* Requis</b></small>
                 </div>
 
@@ -104,7 +104,7 @@ get_header();
                     <?php if (isset($message['mail'])){ ?>
                         <div class="text-white bg-danger px-3"><?php echo $message['mail']; ?></div>
                     <?php } ?>
-                     <input type="email" class="form-control" id="ctc-mail" name="ctc-mail" size="50" placeholder="Votre email..." value="<?php echo(isset($_POST['ctc-mail'])) ? esc_attr($_POST['ctc-mail']) : '' ; ?>">
+                     <input type="email" id="ctc-mail" name="ctc-mail" size="50" placeholder="Votre email..." value="<?php echo(isset($_POST['ctc-mail'])) ? esc_attr($_POST['ctc-mail']) : '' ; ?>">
                      <small class="text-danger"><b>* Requis</b></small>
                 </div>
 
@@ -113,7 +113,7 @@ get_header();
                     <?php if (isset($message['message'])){ ?>
                         <div class="text-white bg-danger px-3"><?php echo $message['message']; ?></div>
                     <?php } ?>
-                     <textarea class="form-control" id="ctc-message" name="ctc-message" placeholder="Votre message..."><?php echo(isset($_POST['ctc-message'])) ? esc_attr($_POST['ctc-message']) : '' ; ?></textarea>
+                     <textarea id="ctc-message" name="ctc-message" placeholder="Votre message..."><?php echo(isset($_POST['ctc-message'])) ? esc_attr($_POST['ctc-message']) : '' ; ?></textarea>
                      <small class="text-danger"><b>* Requis</b></small>
                 </div>
 
@@ -127,7 +127,7 @@ get_header();
                         <div class="text-white bg-danger px-3"><?php echo $message['captcha']; ?></div>
                     <?php } ?>
 
-                    <input type="text" id="captcha" name="captcha" /><small class="text-danger"><b> * Requis</b></small>
+                    <input  id="captcha" name="captcha" /><small class="text-danger"><b> * Requis</b></small>
                 </div>
                 <div class="form-group">
                     <input style=" border:solid 1px" type="submit" class="btn btn-default" id="send" name="send" value="Envoyer">

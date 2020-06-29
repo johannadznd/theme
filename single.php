@@ -9,7 +9,7 @@
         <?php  while( have_posts()){
             the_post();?>
                 <div id="single">
-                <p><?php echo jd_give_me_meta(esc_attr( get_the_date( 'c') ), esc_html( get_the_date()), get_the_category_list(', ')); ?></p>
+                <p style="text-align: center;"><?php echo jd_give_me_meta(esc_attr( get_the_date( 'c') ), esc_html( get_the_date()), get_the_category_list(', ')); ?></p>
                 <?php the_content(); ?>  
                 </div>       
             <?php } ?> 

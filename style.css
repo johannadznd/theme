@@ -88,6 +88,8 @@ p{
 
 .art img{
     margin-bottom: 1vw;
+    width: 20%;
+    height: 20%;
 }
 
 .accueil .art a:hover{
@@ -105,11 +107,55 @@ p{
     width: 35vw;
     margin-left: 2vw;
     flex-direction: column;
-    margin-top: -1vw;
+    margin-top: 1vw;
 }
+
+#contenue2 a{
+
+    color: black;
+    text-decoration: overline;
+
+}
+
+#contenue2 a:hover{
+
+    color: #273746;
+    text-decoration: underline;
+
+}
+
+#pagination a {
+    color: black;
+    text-decoration: overline;
+}
+
+#pagination a:hover {
+    color: #273746;
+    text-decoration: underline;
+}
+
+#pagination1{
+    padding-bottom: 2vw;
+}
+
+#pagination1 a, span{
+    padding: 7px;
+}
+
+#pagination1 a {
+    color: black;
+    text-decoration: overline;
+}
+
+#pagination1 a:hover {
+    color: #273746;
+    text-decoration: underline;
+}
+
 #img1{
   width: 16vw; 
-  padding-top: 2vw; 
+  padding-top: 2vw;
+  padding-bottom: 1vw; 
 }
 
 
@@ -143,7 +189,7 @@ footer{
     float:right !important;
     border: solid black 2px ;
     position: sticky;
-    top:5vw;
+    top:3vw;
 }
 
 .left{
@@ -155,15 +201,22 @@ footer{
     margin:0vw 2vw 5vw 10vw;
 }
 
-#single{
-
-    margin-left: 1vw;
-
+#description p{
+    text-align: justify;
 }
+
+#single{
+    margin-left: 1vw;
+    padding: 2vw;
+}
+
+
 
 #single p {
-    text-align: center;
+    text-align: justify;
+    margin: 0 0 3vw 0;
 }
+
 
 .pager{
     display: flex;
@@ -174,15 +227,14 @@ footer{
 #breadcrumbs{
     display: flex;
     justify-content: center;
-    margin: 0 0 3vw 1vw;    
+    margin: 0 0 2vw 1vw;  
 }
 
 #breadcrumbs span{
     background-color: #273746;
-    padding: 1vw;
+    padding: 15px;
     color: white;
     border-radius: 0vw 2vw 0;
-
 }
 
 
@@ -198,7 +250,33 @@ footer{
 
 form{
     width: 50vw;
+    padding: 2vw;
+    border:solid black 2px;
+    
 }
+
+
+input, textarea{
+    padding: 10px;
+    border-radius: 10px 5px 7px 12px;
+    border: 1px solid ;
+    width: 100%;
+}
+
+
+input[type=text]:hover, input[type=email]:hover{
+    background:#273746;
+    color: white;
+    transition:all 0.3s;
+
+}
+
+#send{
+    border: solid 1px;
+    width: 20%;
+    margin: 0 0 0 35%;
+}
+
 
 footer nav{
     display: flex;
@@ -253,6 +331,43 @@ ul{
     list-style: none;
 }
 
+.aside li{
+    padding-bottom: 7px;
+}
+
+.aside a {
+    color: black;
+    text-decoration: underline;
+}
+
+.aside a:hover{
+    color: #273746;
+}
+
+#single a{
+    color: black;
+    text-decoration: underline;
+}
+
+#single a:hover{
+    color: #273746;
+}
+
+
+
+.pager li, .pager a{
+    color:white;
+}
+
+.pager a:hover{
+    color:#D0D3D4;
+}
+
+.pager li{
+    background: #273746;
+    padding: 1vw;
+    border-radius: 0 2vw 0;
+}
 @media screen and (max-width:980px){
 
     #home{
@@ -264,6 +379,14 @@ ul{
         text-align: center;
     }
 
+    form{
+        border: none;
+    }
+    
+
+    .container{
+        width: 96vw;
+    }
     article{
         
         justify-content: center;
@@ -282,8 +405,20 @@ ul{
         text-align: center;
         padding-left: -4vw !important;
     }
+
+    .art img{
+        margin-bottom: 1vw;
+        width: 45%;
+        height: 45%;
+    }
+
+
     h3{
         text-align: center;
+    }
+
+    .saswp-faq-block-section p{
+    width: 70vw !important;
     }
 
    
@@ -318,6 +453,7 @@ ul{
         border: solid;
     }
 
+
     .left a {
         margin:1vw 0 5vw 70%;
     }
@@ -325,6 +461,9 @@ ul{
         text-align: center;
         width: unset;
         margin-left: 70%;
+        width: 50vw;
+        height: 40vw;
+        
         
     }
 
@@ -333,16 +472,21 @@ ul{
 
     }
 
+    #single{
+        width: 90vw;
+    }
     #single p{
-        width: 95vw;
+        width: 90vw;
         max-width: none;
-        text-align: center;
+        text-align: justify;
         margin-left: 0;
     }
 
     #single p img{
         margin:0 ;
     }
+
+    
 
     .pager{
         width: 90vw;
