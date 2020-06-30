@@ -173,3 +173,77 @@ function get_breadcrumb() {
    
     <?php
 }
+
+/**
+Génèse des ancres
+*/
+function replace_ca($matches){
+    return '<h'.$matches[1].$matches[2].' id="'.sanitize_title($matches[3]).'">'.$matches[3].'</h'.$matches[4].'>';
+  }
+  
+  //Ajout d'un filtre sur le contenu  
+  add_filter('the_content', 'add_anchor_to_title', 12);
+  function add_anchor_to_title($content){   
+    if(is_singular('post')){ // s'il s'agit d'un article
+      global $post;
+      $pattern = "/<h([2-4])(.*?)>(.*?)<\/h([2-4])>/i";
+      
+      $content = preg_replace_callback($pattern, 'replace_ca', $content);
+      return $content;
+    }else{
+      return $content;
+    }
+  }
+  
+  /**
+  Function automenu( $echo = false )
+  */
+  
+  function automenu(){
+    global $post;
+    $obj = '<nav id="sommaire-article">';
+    $obj .= "<p id='sommaire'>Au sommaire</p>";
+    $obj .= "<svg width='24' height='24' data-target='#div-1'  class='toggle-button'><polyline points='18 15 12 9 6 15'></polyline></svg>
+    <div id='div-1'  style='display:none'>";
+    $original_content = $post->post_content;
+  
+    $patt = "/<h([2-4])(.*?)>(.*?)<\/h([2-4])>/i";
+    preg_match_all($patt, $original_content, $results);
+  
+    $lvl1 = 0;
+    $lvl2 = 0;
+    $lvl3 = 0;
+  
+    foreach ($results[3] as $k=> $r) {
+      switch($results[1][$k]){
+        case 2:
+          $lvl1++;
+          $niveau = '<span class="title_lvl">'.$lvl1.'-</span>';
+          $lvl2 = 0;
+          $lvl3 = 0;
+          break;
+  
+        case 3:
+          $lvl2++;
+          $niveau = '<span class="title_lvl">'.$lvl1.'.'.$lvl2.'-</span>';
+          $lvl3 = 0;
+          break;
+  
+        case 4:
+          $lvl3++;
+          $niveau = '<span class="title_lvl">'.$lvl1.'.'.$lvl2.'.'.$lvl3.'-</span>';
+          break;
+      }
+  
+      $obj .= '<a href="#'.sanitize_title($r).'" class="title_lvl'.$results[1][$k].'">'.$niveau.$r.'</a>';
+    }
+  
+    $obj .= '</nav>';
+    $obj .= '</div>';
+    if ( $echo )
+      echo $obj;
+    else
+      return $obj;
+  }
+
+  add_shortcode('sommaire','automenu');

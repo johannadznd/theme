@@ -15,6 +15,8 @@ if (isset($_SESSION['contact-result'])){?>
 
 <?php } ?> 
 <!-- Affiche message pour formulaire envoyé -->
+ 
+
 
 <section id="home">
         <?php if(have_posts()){

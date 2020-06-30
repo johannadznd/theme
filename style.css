@@ -6,19 +6,12 @@ Version: 1.0
 Text Domain: Cleatis 
 */
 
-#home{
-    background: #273746;
-    padding: 2vw 0 2vw 0;
-    border-radius: 0 0 35vw 0;
-    color: white;
-}
-
+/*=====================================================Header Footer====================================================*/ 
 
 #navbar{
     background:none;
     border-bottom: solid 2px;
 }
-
 #navbar a {
     padding: 1vw;
 }
@@ -29,135 +22,25 @@ Text Domain: Cleatis
 .navbar-light .navbar-toggler {
     color: black;
     border-color: black;
-
 }
+
+.navbar-brand{
+    margin-right:unset;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.description{
+    margin: 3px 2vw 0 0;
+}
+
 h1, h2 {
     text-align: center;
     margin-top: 2vw;
     margin-bottom: 6vw;
 }
-
-article{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 5vw 5vw 5vw 0;
-
-}
-
-p img {
-    margin: 0 5vw 0 0;
-    width: 100%;
-    height: 100%;
-
-}
-
-p{
-    max-width: 55vw; 
-}
-
-#sec_art{
-   margin : 2vw;
-   
-}
-
-.art{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2vw;
-}
-
-.art:hover{
-    border: solid;
-    text-align: center;
-    justify-content: center;
-    border-radius: 2vw;
-}
-
-.accueil .art:hover{
-    padding: 2vw;
-    border: solid 3px;
-    
-}
-
-.accueil .art a{
-    text-decoration: overline;
-    color: black;
-    padding-top: 1vw;
-}
-
-.art img{
-    margin-bottom: 1vw;
-    width: 20%;
-    height: 20%;
-}
-
-.accueil .art a:hover{
-    text-decoration: underline;
-    color: #273746 ;
-}
-
-
-#contenue{
-    margin-left: 2vw;
-    flex-direction: column;
-}
-
-#contenue2{
-    width: 35vw;
-    margin-left: 2vw;
-    flex-direction: column;
-    margin-top: 1vw;
-}
-
-#contenue2 a{
-
-    color: black;
-    text-decoration: overline;
-
-}
-
-#contenue2 a:hover{
-
-    color: #273746;
-    text-decoration: underline;
-
-}
-
-#pagination a {
-    color: black;
-    text-decoration: overline;
-}
-
-#pagination a:hover {
-    color: #273746;
-    text-decoration: underline;
-}
-
-#pagination1{
-    padding-bottom: 2vw;
-}
-
-#pagination1 a, span{
-    padding: 7px;
-}
-
-#pagination1 a {
-    color: black;
-    text-decoration: overline;
-}
-
-#pagination1 a:hover {
-    color: #273746;
-    text-decoration: underline;
-}
-
-#img1{
-  width: 16vw; 
-  padding-top: 2vw;
-  padding-bottom: 1vw; 
-}
-
 
 footer{
     background:#273746;
@@ -167,116 +50,6 @@ footer{
     display: flow-root;
     color: white;
 }
-
-#pagination{
-    display: flex; 
-    justify-content: center;
-    margin-bottom: 2vw;
-  
-}
-
-#pagination1{
-    margin-left: 30vw;    
-}
-
-#pagination a, span {
-    padding-left: 1vw;
-}
-
-.aside{
-    padding: 1vw; 
-    width: 30%;
-    float:right !important;
-    border: solid black 2px ;
-    position: sticky;
-    top:3vw;
-}
-
-.left{
-   width: 58% !important;
-   float: left;
-}
-#description{
-    width: 40vw;
-    margin:0vw 2vw 5vw 10vw;
-}
-
-#description p{
-    text-align: justify;
-}
-
-#single{
-    margin-left: 1vw;
-    padding: 2vw;
-}
-
-
-
-#single p {
-    text-align: justify;
-    margin: 0 0 3vw 0;
-}
-
-
-.pager{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3vw;
-}
-
-#breadcrumbs{
-    display: flex;
-    justify-content: center;
-    margin: 0 0 2vw 1vw;  
-}
-
-#breadcrumbs span{
-    background-color: #273746;
-    padding: 15px;
-    color: white;
-    border-radius: 0vw 2vw 0;
-}
-
-
-#breadcrumbs a{
-    color:white;
-    text-decoration: overline;
-}
-
-#breadcrumbs a:hover{
-    color:#D0D3D4;
-    text-decoration: underline;
-}
-
-form{
-    width: 50vw;
-    padding: 2vw;
-    border:solid black 2px;
-    
-}
-
-
-input, textarea{
-    padding: 10px;
-    border-radius: 10px 5px 7px 12px;
-    border: 1px solid ;
-    width: 100%;
-}
-
-
-input[type=text]:hover, input[type=email]:hover{
-    background:#273746;
-    color: white;
-    transition:all 0.3s;
-
-}
-
-#send{
-    border: solid 1px;
-    width: 20%;
-    margin: 0 0 0 35%;
-}
-
 
 footer nav{
     display: flex;
@@ -308,17 +81,10 @@ footer a:hover {
     width: unset;
 }
 
-.navbar-brand{
-    margin-right:unset;
-}
-
-.description{
-    margin: 3px 2vw 0 0;
-}
-
 .text-center{
     margin: 3vw;
 }
+
 
 ul{
     list-style: none;
@@ -329,6 +95,174 @@ ul{
     display: flex;
     justify-content: space-between;
     list-style: none;
+}
+
+
+
+/*===================================================Fin header footer==================================================*/
+
+/*=======================================================HomePage=======================================================*/
+
+#home{
+    background: #273746;
+    padding: 2vw 0 2vw 0;
+    border-radius: 0 0 35vw 0;
+    color: white;
+}
+
+article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5vw 5vw 5vw 0;
+
+}
+
+.accueil .art:hover{
+    padding: 2vw;
+    border: solid 3px;
+    
+}
+
+.accueil .art a{
+    text-decoration: overline;
+    color: black;
+    padding-top: 1vw;
+}
+
+.accueil .art a:hover{
+    text-decoration: underline;
+    color: #273746 ;
+}
+
+#contenue{
+    margin-left: 2vw;
+    flex-direction: column;
+}
+
+#pagination a {
+    color: black;
+    text-decoration: overline;
+}
+
+#pagination a, span {
+    padding-left: 1vw;
+}
+
+
+#pagination a:hover {
+    color: #273746;
+    text-decoration: underline;
+}
+
+
+#pagination{
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 2vw;
+  
+}
+
+
+/*=====================================================Fin HomePage====================================================*/
+/*=====================================================Contenue blog===================================================*/
+
+
+p img {
+    margin: 0 5vw 0 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+p{
+    max-width: 55vw; 
+}
+
+#sec_art{
+   margin : 2vw;
+   
+}
+
+.art{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2vw;
+}
+
+.art:hover{
+    border: solid;
+    text-align: center;
+    justify-content: center;
+    border-radius: 2vw;
+}
+
+.art img{
+    margin-bottom: 1vw;
+    width: 20%;
+    height: 20%;
+}
+
+#contenue2{
+    width: 35vw;
+    margin-left: 2vw;
+    flex-direction: column;
+    margin-top: 1vw;
+}
+
+#contenue2 a{
+
+    color: black;
+    text-decoration: overline;
+
+}
+
+#contenue2 a:hover{
+
+    color: #273746;
+    text-decoration: underline;
+
+}
+
+
+#pagination1{
+    padding-bottom: 2vw;
+    margin-left: 30vw;  
+}
+
+
+#pagination1 a, span{
+    padding: 7px;
+}
+
+#pagination1 a {
+    color: black;
+    text-decoration: overline;
+}
+
+#pagination1 a:hover {
+    color: #273746;
+    text-decoration: underline;
+}
+
+#img1{
+    width: 16vw; 
+    padding-top: 2vw;
+    padding-bottom: 1vw; 
+}
+  
+
+/*===================================================Fin contenue blog================================================ */
+
+/*=======================================================Aside=========================================================*/
+
+.aside{
+    padding: 1vw; 
+    width: 30%;
+    float:right !important;
+    border: solid black 2px ;
+    position: sticky;
+    top:3vw;
 }
 
 .aside li{
@@ -343,6 +277,54 @@ ul{
 .aside a:hover{
     color: #273746;
 }
+/*======================================================Fin Aside=======================================================*/
+/*=======================================================Left===========================================================*/
+
+.left{
+    width: 58% !important;
+    float: left;
+ }
+
+/*======================================================FIn Left========================================================*/
+
+/*====================================================Page catégorie====================================================*/
+
+#description{
+    width: 40vw;
+    margin:0vw 2vw 5vw 10vw;
+}
+
+#description p{
+    text-align: justify;
+}
+
+
+/*=================================================Fin Page catégorie====================================================*/
+
+/*====================================================Page article=======================================================*/
+
+
+#single h3{
+    text-align: center;
+}
+
+#single{
+    margin-left: 1vw;
+    padding: 2vw;
+}
+
+
+#single p {
+    text-align: justify;
+    margin: 0 0 3vw 0;
+}
+
+.pager{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3vw;
+}
+
 
 #single a{
     color: black;
@@ -352,8 +334,6 @@ ul{
 #single a:hover{
     color: #273746;
 }
-
-
 
 .pager li, .pager a{
     color:white;
@@ -368,29 +348,137 @@ ul{
     padding: 1vw;
     border-radius: 0 2vw 0;
 }
+
+#sommaire{
+    margin-bottom: 0 !important;
+    text-align: center !important;
+}
+
+#sommaire-article{
+    width: 25vw;
+    padding:2vw;
+    background-color: #D0D3D4 ;
+}
+
+.title_lvl3{
+    padding-left: 2vw;  
+
+}
+.title_lvl4{
+
+    padding-left: 4vw;
+}
+#div-1{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#sommaire-article strong a{
+  text-decoration: none;
+    
+}
+/*==================================================Fin Page article====================================================*/
+
+/*===================================================Fil d'ariane=======================================================*/
+
+
+
+
+
+
+#breadcrumbs{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 2vw 1vw;  
+}
+
+#breadcrumbs span{
+    background-color: #273746;
+    padding: 15px;
+    color: white;
+    border-radius: 0vw 2vw 0;
+}
+
+
+#breadcrumbs a{
+    color:white;
+    text-decoration: overline;
+}
+
+#breadcrumbs a:hover{
+    color:#D0D3D4;
+    text-decoration: underline;
+}
+
+
+/*==================================================Fin Fil d'ariane====================================================*/
+
+/*====================================================Page contact======================================================*/
+
+
+form{
+    width: 50vw;
+    padding: 2vw;
+    border:solid black 2px;
+    
+}
+
+input, textarea{
+    padding: 10px;
+    border-radius: 10px 5px 7px 12px;
+    border: 1px solid ;
+    width: 100%;
+}
+
+
+input[type=text]:hover, input[type=email]:hover{
+    background:#273746;
+    color: white;
+    transition:all 0.3s;
+
+}
+
+#send{
+    border: solid 1px;
+    width: 20%;
+    margin: 0 0 0 35%;
+}
+
+/*==================================================Fin Page contact====================================================*/
+
+
 @media screen and (max-width:980px){
 
+    /*===============================================Footer heauder=====================================================*/
+    #desc{
+        margin: 0;
+    }
+
+    #desc ul {
+        padding-left: 0;
+    }
+    /*=============================================Fin Footer heauder===================================================*/
+
+    /*=================================================Home page========================================================*/
+    
     #home{
         border-radius: unset;
     }
 
-    #pagination1{
-        margin:0;    
-        text-align: center;
-    }
-
-    form{
-        border: none;
-    }
-    
-
-    .container{
-        width: 96vw;
-    }
     article{
         
         justify-content: center;
         margin: 1vw;
+    }
+
+    /*===============================================Fin Home page======================================================*/
+
+    /*===============================================Contenue blog======================================================*/ 
+    
+    #pagination1{
+        margin:0;    
+        text-align: center;
     }
 
     p{
@@ -399,8 +487,9 @@ ul{
 
     .art{
         justify-content: center;
-
+        width: 90vw;
     }
+
     .art p{
         text-align: center;
         padding-left: -4vw !important;
@@ -412,18 +501,96 @@ ul{
         height: 45%;
     }
 
+    .art:hover{
+        border:none;
+        }
+
 
     h3{
         text-align: center;
     }
 
-    .saswp-faq-block-section p{
-    width: 70vw !important;
+    #img1{
+        text-align: center;
+        width: unset;
+        width: 70vw;
+        height: 40vw;
     }
 
+    /*=============================================FIn Contenue blog====================================================*/ 
+
+    /*================================================Page contact======================================================*/ 
+
+    form{
+        border: none;
+    }
+
+    #lg-contact p{
+        max-width: 95vw;
+        text-align: center;
+    }
+
+    form{
+        width: 90vw;
+    }
+    /*==============================================Fin Page contact====================================================*/ 
+    /*================================================Page Index =======================================================*/ 
    
+    .container{
+        width: 96vw;
+    }
+
+    #index p{
+        margin-left: 5vw ;
+        width: 100vw;
+    }
+
+    /*==============================================Fin Page Index =====================================================*/ 
+
+    /*===============================================Page article=======================================================*/ 
+
+    .saswp-faq-block-section p{
+        width: 70vw !important;
+    }
+
+    #single{
+        width: 90vw;
+    }
+    #single p{
+        width: 93vw;
+        max-width: none;
+        text-align: justify;
+        margin-left: 0;
+    }
+
+    #single h3{
+        margin: 2vw 0 2vw 0 !important;
+    }
+
+    #single h2, #single h3 ,#single h4{
+        width: 90vw;
+    }
+
+    #single figure{
+
+    padding-left:3vw;
+    }
+
+    .pager{
+        width: 90vw;
+    }
+
+    #sommaire-article{
+        width: 60vw;
+        margin-left: 19%;
+    }
     
-   /* Pas toucher*/  
+    #sommaire{
+        width: 100% !important;
+    }
+    /*=============================================Fin Page article=====================================================*/ 
+   
+    /*===================================================Left===========================================================*/ 
     .left{
         float: none;
      }
@@ -432,18 +599,18 @@ ul{
         width: 100vw;
         margin-left: -5vw;
     }
-    #index p{
-        margin-left: 5vw ;
-        width: 100vw;
-    }
-    .left h3{
-        width: 98vw;
-        margin: 3vw 0 3vw -15vw;
-    }
+
 
     .left a{
         margin: 0vw !important;
     }
+
+    .left a {
+        margin:1vw 0 5vw 70%;
+    }
+    /*=================================================Fin Left=========================================================*/ 
+    
+    /*==================================================Aside===========================================================*/ 
 
     .aside{
         float: none !important;
@@ -453,66 +620,24 @@ ul{
         border: solid;
     }
 
+    /*=================================================Fin Aside========================================================*/ 
 
-    .left a {
-        margin:1vw 0 5vw 70%;
-    }
-    #img1{
-        text-align: center;
-        width: unset;
-        margin-left: 70%;
-        width: 50vw;
-        height: 40vw;
-        
-        
-    }
+    /*===============================================Page catégorie=====================================================*/ 
 
     #description{
         text-align: center;
 
     }
-
-    #single{
-        width: 90vw;
-    }
-    #single p{
-        width: 90vw;
-        max-width: none;
-        text-align: justify;
-        margin-left: 0;
-    }
-
-    #single p img{
-        margin:0 ;
-    }
-
+    /*==============================================Fin Page catégorie==================================================*/ 
     
-
-    .pager{
-        width: 90vw;
-    }
-
-    #lg-contact p{
-        max-width: 100vw;
-        text-align: center;
-    }
+    /*==============================================Fil d'ariane========================================================*/ 
 
     #breadcrumbs{
         width: 92vw !important;
         max-width:none;
         margin-left: 2vw !important;
     }
-
-    form{
-        width: 90vw;
-    }
-
-    .art:hover{
-    border:none;
-    }
-
+    /*=============================================Fin Fil d'ariane=====================================================*/ 
 }
-
-    .dropdown:hover .dropdown-menu {
-          display: block;
-    }
+  
+    

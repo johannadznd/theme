@@ -2,8 +2,9 @@
 <h2><?php the_title(); ?></h2>
 
 <section class="left">
-
+<?php if(!empty($post->post_toc)) {?><?php echo $post->post_toc; ?><?php } ?>
 <div id="breadcrumbs"><?php get_breadcrumb(); ?></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <?php  if (have_posts()){ ?>
         <?php  while( have_posts()){
