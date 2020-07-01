@@ -244,6 +244,8 @@ function replace_ca($matches){
       echo $obj;
     else
       return $obj;
-  }
+}
 
-  add_shortcode('sommaire','automenu');
+add_shortcode('sommaire','automenu');
+
+

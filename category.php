@@ -8,7 +8,7 @@
 
 
     <?php  if (have_posts()){ ?>
-       <div  id='description' ><?php the_archive_description();?></div>
+       <div  id='description' ><?php the_archive_description()?></div>
         </div>
         
             <?php  while( have_posts()){

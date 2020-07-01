@@ -9,6 +9,7 @@ jQuery(document).ready(function($){
     });
 });
 
+/*
 jQuery(function($) {
     if($(window).width() < 992) {
        $(".dropdown-toggle").attr('data-toggle', 'dropdown');   $('.dropdown').on('show.bs.dropdown', function () {
@@ -17,13 +18,11 @@ jQuery(function($) {
        });
     } 
 });
+*/
 
 
 $(function() {
     $( '.toggle-button' ).on( 'click', function() {
-        // À décommenter si tu veux masquer toutes les autres div
-        // $( '.togglable' ).not( this.getAttribute( 'data-target' ) ).hide( 'slow' );
-         
         $( this.getAttribute( 'data-target' ) ).toggle( 'slow' );
     });
 });
