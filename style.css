@@ -263,7 +263,7 @@ p{
     border: solid black 2px ;
     position: sticky;
     position: -webkit-sticky;
-    top:1vw;
+    top:0vw;
 }
 
 .aside li{
